@@ -1,5 +1,5 @@
 import 'package:flutter_note_app/domain/model/note.dart';
-import 'package:flutter_note_app/domain/repository/repository.dart';
+import 'package:flutter_note_app/domain/repository/note_repository.dart';
 
 import '../data_source/note_db_helper.dart';
 

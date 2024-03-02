@@ -1,5 +1,5 @@
 import '../model/note.dart';
-import '../repository/repository.dart';
+import '../repository/note_repository.dart';
 
 class UpdateNote {
   final NoteRepository repository;
