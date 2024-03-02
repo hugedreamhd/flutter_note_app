@@ -4,10 +4,12 @@ import '../../../domain/model/note.dart';
 
 class NoteItem extends StatelessWidget {
   final Note note;
+  final Function? onDeleteTap;//카드내 삭제기능
 
   NoteItem({
     Key? key,
     required this.note,
+    this.onDeleteTap,
   }) : super(key: key);
 
   @override
@@ -17,6 +19,7 @@ class NoteItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            width: double.infinity,
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -42,10 +45,14 @@ class NoteItem extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 8,
             right: 8,
-            child: Icon(Icons.delete),
+            child: InkWell(
+              onTap: () {
+                onDeleteTap?.call();
+              },
+                child: const Icon(Icons.delete)),
           ),
         ],
       ),
